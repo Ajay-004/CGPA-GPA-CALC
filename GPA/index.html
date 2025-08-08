@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="title-section">
+                        <span class="icon">🎓</span>
+                        <h1>GPA Calculator</h1>
+                    </div>
+                    <p class="subtitle">Calculate your semester GPA and cumulative CGPA</p>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn btn-primary" onclick="addSemester()">
+                   
+                    Add Semester
+                </button>
+               
+                <button class="btn btn-outline" onclick="resetData()">
+                    
+                    Reset All
+                </button>
+            </div>
+
+            <!-- Semesters Container -->
+            <div id="semesters-container" class="semesters-container"></div>
+
+            <!-- CGPA Section -->
+            <div id="cgpa-section" class="cgpa-section" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h2> Calculate CGPA</h2>
+                        <p>Select the number of semesters to include in CGPA calculation</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="semester-selector">
+                            <label>Select Semesters (1-8):</label>
+                            <select id="semester-count" onchange="showManualGpaInputs()">
+                                <option value="">Choose semesters</option>
+                                <option value="1">1 Sem</option>
+                                <option value="2">2 Sem</option>
+                                <option value="3">3 Sem</option>
+                                <option value="4">4 Sem</option>
+                                <option value="5">5 Sem</option>
+                                <option value="6">6 Sem</option>
+                                <option value="7">7 Sem</option>
+                                <option value="8">8 Sem</option>
+                            </select>
+                        </div>
+
+                        <div id="manual-gpa-inputs" class="manual-gpa-inputs" style="display: none;"></div>
+
+                        <div id="cgpa-result" class="cgpa-result" style="display: none;">
+                            <div class="result-card">
+                               
+                                <div class="result-content">
+                                    <h3>Your CGPA</h3>
+                                    <div id="cgpa-value" class="cgpa-value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
